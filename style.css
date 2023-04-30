@@ -25,6 +25,9 @@ button{
     padding: 10px;
     border-radius: 9px;
 }
+section{
+    padding: 100px 0;
+}
 li{
     list-style: none;
 }
@@ -176,7 +179,7 @@ a{
 .hero-txt > *{
     margin-top: 10px;
 }
-.hero-section img{
+.controller{
     width: 26rem;
     transform: rotate(-13deg);
 }
@@ -195,14 +198,11 @@ a{
 @media (width < 740px) {
     .hero-section{
         grid-template-columns: 1fr;
-        height: 145vh;
+        height: 100%;
         gap: 2rem;
     }
     .hero-section img{
         align-self: start;
-    }
-    .hero-section img{
-        position: absolute;
     }
 }
 @media (width < 508px) {
@@ -213,7 +213,8 @@ a{
 }
 @media (width < 508px) {
     .hero-section img{
-        width: 75vw
+        width: 75vw;
+        position: relative;
     }
     .hero-txt{
         font-size: 15px;
@@ -222,4 +223,28 @@ a{
         font-size: 7vw;
     }
     
+}
+
+
+/* Hero-section Slider */
+.slide-container{
+    display: grid;
+    align-items: center;
+    grid-auto-flow: column;
+    gap: 5rem;
+    width: 400px;
+    overflow: auto;
+    margin-top: 2rem;
+}
+.slide-container::-webkit-scrollbar{
+    display: none;
+}
+.slide{
+    padding: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    text-align: center;
+}
+.slide img{
+    width: 5rem;
 }
