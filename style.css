@@ -4,6 +4,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 /* Logo font */
 @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap');
+/* popular game section font */
+  @import url('https://fonts.googleapis.com/css2?family=Castoro+Titling&display=swap');
 
 
 
@@ -54,6 +56,7 @@ a{
     align-items: center;
     height: 5rem;
     padding: 50px;
+    width: 100vw;
     background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1));
 
 }
@@ -62,6 +65,7 @@ a{
     font-family: 'Bruno Ace SC', cursive;
     letter-spacing: 2px;
     color: white;
+    z-index: 11;
 }
 .navInput{
     padding: 8px 45px;
@@ -115,9 +119,16 @@ a{
 } 
 .fa-solid{
     font-size: 2rem;
+    color: white;
 }
 .fa-bars-staggered{
     display: none !important;
+}
+.fa-xmark{
+    position: fixed;
+    z-index: 11;
+    right: 4rem;
+    top: 2rem;
 }
 
 
@@ -155,15 +166,20 @@ a{
         width: 93vw;
     }
     .ul{
-        position: absolute;
+        position: fixed;
         top: 7rem;
-        background: white;
+        background: black;
         width: 100vw;
+        height: 100vh;
+        top: 0;
         text-align: center;
-        height: 83vh;
         right: 100%;
         transition: 1s all;
         opacity: 0.97;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
     }
     .li{
         padding: 20px;
@@ -370,4 +386,58 @@ a{
     .slide{
         animation: slide-small 5s infinite linear;
     }
+}
+
+
+/* Game-Section */
+.game-section{
+    height: 100vh;
+    width: 100vw;
+    color: white;
+    font-family: 'Castoro Titling', cursive;
+}
+.game-container{
+    display: grid;
+    gap: 3rem;
+}
+
+.game-section h1{
+    text-align: center;
+    padding: 50px 0;
+    font-size: 45px;
+    font-family: 'Bruno Ace SC', cursive;
+}
+.game-container .logo-game{
+    margin: 0 3rem ;
+    width: 8rem;
+}
+.xbox-logo{
+    width: 5rem !important;
+}
+.game-container-inside{
+    display: flex;
+    gap: 5rem;
+    overflow: auto;
+    padding: 0 50px;
+}
+.game-container-inside::-webkit-scrollbar{
+    display: none;
+}
+
+.game{
+    height: 20rem;
+    width: 20rem;
+}
+.game p{
+    margin-top: 5px;
+}
+.game img{
+    width: 15rem;
+    height: 15rem;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: .2s ease-in-out;
+}
+.game img:hover{
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
 }
