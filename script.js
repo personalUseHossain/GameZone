@@ -24,3 +24,12 @@ function isBar(icon) {
     return false;
   }
 }
+
+//Hero section bg image slider
+
+//variables
+let allImages = document.querySelectorAll(".hero-bg-img");
+let counter = 0;
+setInterval(() => {
+  allImages[counter];
+}, 3000);

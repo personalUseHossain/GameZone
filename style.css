@@ -6,6 +6,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap');
 
 
+
+
+
+
 /* Universal Styling */
 *{
     margin: 0;
@@ -36,6 +40,11 @@ a{
     color: black;
 }
 
+
+
+
+
+
 /* Navigation */
 .navbar{
     display: flex;
@@ -43,18 +52,25 @@ a{
     align-items: center;
     height: 5rem;
     padding: 50px;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1));
 
 }
 .logo h1{
     text-align: center;
     font-family: 'Bruno Ace SC', cursive;
     letter-spacing: 2px;
+    color: white;
 }
 .navInput{
     padding: 8px 45px;
     border: none;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid white;
+    background: transparent;
 }
+.navInput::placeholder{
+    color: white;
+}
+
 .search{
     position: relative;
 }
@@ -78,11 +94,14 @@ a{
     padding: 0 15px;
     position: relative;
 }
+.li a{
+    color: white;
+}
 
 .li::after{
     content: '';
     position: absolute;
-    background-color: black;
+    background-color: white;
     transition: .5s;
     width: 0%;
     height: 2px;
@@ -90,7 +109,7 @@ a{
     left: 6px;
 }
 .li:hover:after{
-    width: 95%;
+    width: 85%;
 } 
 .fa-solid{
     font-size: 2rem;
@@ -98,6 +117,8 @@ a{
 .fa-bars-staggered{
     display: none !important;
 }
+
+
 
 
 /* Navigation Media Queary */
@@ -158,6 +179,40 @@ a{
     }
 }
 
+
+
+
+
+/* Hero-section background image */
+.hero-bg{
+    position: absolute;
+    z-index: -1;
+    opacity: .5;
+    display: grid;
+    grid-auto-flow: column;
+    top: 0;
+    overflow: hidden;
+}
+.hero-bg img{
+    /* animation: bgSlider 20s infinite linear; */
+    width: 100vw;
+    object-fit: cover;
+    transition: 1s;
+}
+
+/* Hero-section img slider animation */
+@keyframes bgSlider {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-800%);
+    }
+}
+
+
+
+
 /* Hero section */
 .hero-section{
     display: grid;
@@ -165,6 +220,7 @@ a{
     place-items: center;
     height: 80vh;
     letter-spacing: 1px;
+    color: white;
 }
 .hero-txt{
     font-size: 22px;
@@ -175,6 +231,10 @@ a{
 .hero-txt button{
     background-color: #92e0ff;
     margin: 15px 10px 0 0;
+    transition: .2s;
+}
+.hero-txt button:hover{
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.1);
 }
 .hero-txt > *{
     margin-top: 10px;
@@ -183,6 +243,11 @@ a{
     width: 26rem;
     transform: rotate(-13deg);
 }
+
+
+
+
+
 /* Media query for hero-section */
 @media (width < 1046px) {
     .hero-txt{
@@ -226,25 +291,79 @@ a{
 }
 
 
+
+
+
+
+
+
+
 /* Hero-section Slider */
 .slide-container{
     display: grid;
     align-items: center;
     grid-auto-flow: column;
     gap: 5rem;
-    width: 400px;
-    overflow: auto;
+    width: 800px;
+    overflow: hidden;
     margin-top: 2rem;
+    padding: 0 0 50px 0;
+    color: white;
 }
-.slide-container::-webkit-scrollbar{
-    display: none;
+.slide-container:hover .slide{
+    animation-play-state: paused;
+}
+.slider{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .slide{
+    /* animation: slide 5s infinite linear; */
     padding: 10px;
     cursor: pointer;
     font-size: 15px;
     text-align: center;
+    border-radius: 5px;
 }
+.slide:hover{
+    background: rgb(112, 102, 102);
+}
+
 .slide img{
-    width: 5rem;
+    width: 6.5rem;
+}
+
+
+
+/* Animation for slider */
+@keyframes slide {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-1020px);
+
+    }
+}
+@keyframes slide-small {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-900px);
+
+    }
+} 
+
+
+
+/* Media query for hero-section slider */
+@media (width < 1046px) {
+    .slide img{
+        width: 5rem;
+    }
+    .slide{
+        animation: slide-small 5s infinite linear;
+    }
 }
