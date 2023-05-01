@@ -4,7 +4,6 @@
 
 const navIcon = document.querySelector(".fa-bars-staggered");
 const menu = document.querySelector(".ul");
-console.log(menu);
 //EventListener and function
 navIcon.addEventListener("click", () => {
   if (isBar(navIcon)) {
@@ -24,12 +23,3 @@ function isBar(icon) {
     return false;
   }
 }
-
-//Hero section bg image slider
-
-//variables
-let allImages = document.querySelectorAll(".hero-bg-img");
-let counter = 0;
-setInterval(() => {
-  allImages[counter];
-}, 3000);
