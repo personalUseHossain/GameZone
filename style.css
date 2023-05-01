@@ -18,6 +18,8 @@
 }
 body{
     font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+    background: rgba(0, 0, 0, 0.4);
 }
 button,
 a,
@@ -77,8 +79,8 @@ a{
 .serachIcon{
     position: absolute;
     width: 21px;
-    right: 8px;
-    top: 5px;
+    right: 12px;
+    bottom: 16px
 }
 .ul{
     display: flex;
@@ -188,15 +190,17 @@ a{
     position: absolute;
     z-index: -1;
     opacity: .5;
-    display: grid;
-    grid-auto-flow: column;
-    top: 0;
+    display: flex;
     overflow: hidden;
+    top: 0;
+    width: 100vw;
 }
 .hero-bg img{
-    /* animation: bgSlider 20s infinite linear; */
+    animation: bgSlider 20s infinite linear;
+    animation-timing-function: steps(9);
     width: 100vw;
     object-fit: cover;
+    height: 130vh;
     transition: 1s;
 }
 
@@ -206,7 +210,7 @@ a{
         transform: translateX(0);
     }
     100%{
-        transform: translateX(-800%);
+        transform: translateX(-900%);
     }
 }
 
@@ -319,7 +323,7 @@ a{
     align-items: center;
 }
 .slide{
-    /* animation: slide 5s infinite linear; */
+    animation: slide 5s infinite linear;
     padding: 10px;
     cursor: pointer;
     font-size: 15px;
