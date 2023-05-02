@@ -392,14 +392,16 @@ a{
 /* Game-Section */
 .game-section{
     height: 100vh;
-    width: 100vw;
     color: white;
     font-family: 'Castoro Titling', cursive;
+    text-align: center;
+    padding: 100px 0;
 }
 .game-container{
     display: grid;
     gap: 3rem;
 }
+
 
 .game-section h1{
     text-align: center;
@@ -410,6 +412,9 @@ a{
 .game-container .logo-game{
     margin: 0 3rem ;
     width: 8rem;
+    background: white;
+    border-radius: 10px;
+   padding: 10px;
 }
 .xbox-logo{
     width: 5rem !important;
@@ -439,5 +444,24 @@ a{
     transition: .2s ease-in-out;
 }
 .game img:hover{
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 10px 10px 10px rgba(255, 255, 255, 0.264);
+    transform: scale(1.01);
+}
+.see-more-btn{
+    text-align: center;
+    background: #92e0ff;
+    margin-bottom: 30px;
+}
+
+/* Media query for game-section */
+@media (width < 1046px) {
+    .game img{
+        width: 10rem;
+        height: 10rem;
+    }
+    .game-container .logo-game{
+        background: white;
+        border-radius: 10px;
+        width: 5rem;
+    }
 }
