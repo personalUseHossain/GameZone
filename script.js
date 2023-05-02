@@ -23,3 +23,23 @@ function isBar(icon) {
     return false;
   }
 }
+
+//Navigation bar scroll function
+
+//variables
+
+let prevScrollpos = window.pageYOffset;
+let navbar = document.querySelector(".navbar");
+
+//main function
+window.addEventListener("scroll", function () {
+  const currentScrollPos = window.pageYOffset;
+
+  if (prevScrollpos > currentScrollPos) {
+    navbar.style.top = "0%";
+  } else {
+    navbar.style.top = "-20%";
+  }
+
+  prevScrollpos = currentScrollPos;
+});
