@@ -21,7 +21,19 @@
 body{
     font-family: 'Roboto', sans-serif;
     overflow-x: hidden;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.677);
+}
+.no-scroll{
+    overflow: hidden;
+}
+body::-webkit-scrollbar{
+    background: linear-gradient(#92e0ff, #00b7ff);
+    border-radius: 10px;
+    width: 10px;
+}
+body::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background: #008cff;
 }
 button,
 a,
@@ -32,6 +44,9 @@ i{
 button{
     padding: 10px;
     border-radius: 9px;
+}
+button:hover{
+    transform: scale(1.01) translateX(5px);
 }
 section{
     padding: 100px 0;
@@ -254,10 +269,10 @@ a{
 .hero-txt button{
     background-color: #92e0ff;
     margin: 15px 10px 0 0;
-    transition: .2s;
+    transition: .5s;
 }
 .hero-txt button:hover{
-    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.674);
 }
 .hero-txt > *{
     margin-top: 10px;
@@ -287,7 +302,7 @@ a{
     .hero-section{
         grid-template-columns: 1fr;
         height: 100%;
-        gap: 2rem;
+        gap: 4rem;
     }
     .hero-section img{
         align-self: start;
@@ -394,13 +409,13 @@ a{
 
 /* Game-Section */
 .game-section{
-    height: 100vh;
     color: white;
     font-family: 'Castoro Titling', cursive;
     text-align: center;
-    padding: 100px 0;
+
 }
 .game-container{
+    padding: 100px 0;
     display: grid;
     gap: 3rem;
 }
@@ -466,5 +481,256 @@ a{
         background: white;
         border-radius: 10px;
         width: 5rem;
+    }
+}
+
+/* Console Section */
+.console{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background: url(./console\ section\ bg.webp);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    object-fit: cover;
+    place-items: center;
+    height: 100vh;
+    width: 100vw;
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+.console::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+.console h1{
+    font-size: 50px;
+}
+.console p{
+    font-size: 30px;
+}
+.console-txt button{
+    margin-top: 7px;
+    transition: .5s all;
+}
+.console-txt button:hover{
+    box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.774);
+}
+.console img{
+    width: 50rem;
+}
+
+/* Media query for console section */
+
+@media (width < 1767px) {
+    .console img{
+        width: 40rem;
+    }
+}
+@media (width < 1300px) {
+    .console img{
+        width: 30rem;
+    }
+    .console h1{
+        font-size: 40px;
+    }
+    .console p{
+        font-size: 25px;
+    }
+}
+@media (width < 1000px) {
+    .console{
+        grid-template-columns: 1fr;
+        align-items: start;
+        background-size: 64rem;
+    }
+}
+@media (width < 501px) {
+    .console img{
+        width: 90vw;
+    }
+    .console h1{
+        font-size: 30px;
+    }
+    .console p{
+        font-size: 20px;
+    }
+}
+
+
+/* buy-console  */
+.buy-console{
+    display: grid;
+    place-items: center;
+    gap: 5rem;
+    background: url(./buy-console-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+    font-family: 'Castoro Titling', cursive;
+}
+.buy-console::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+.buy-console .buy-console-h1{
+    font-size: 40px;
+    color: white;
+    font-family: 'Bruno Ace SC', cursive;
+}
+.console-item-container{
+    display: flex;
+    gap: 5rem;
+}
+.console-item{
+    width: 25rem;
+    height: 30rem;
+    border-radius: 10px;
+    background-color: rgb(41, 39, 39);
+    color: white;
+    display: grid;
+    place-items: center;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+.console-item::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+
+.console-item-txt{
+    padding: 30px;
+    transform: translateY(120px);
+    display: grid;
+    gap: 5rem;
+    transition: 1s;
+    height: 110%;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.9))
+}
+.nitendo-txt{
+    transform: translateY(160px);
+}
+.console-item:hover .console-item-txt{
+    gap: 0;
+    transform: translateY(10px);
+}
+.console-item-txt button{
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    width: 6rem;
+    height: 3rem;
+    transition: .5s all;
+}
+.console-item-txt button:hover{
+    background: white;
+    color: black;
+}
+.console-item-txt h1{
+    font-size: 25px;
+}
+.playstation-img{
+    width: 25rem;
+
+}
+.nitendo-img{
+    width: 20rem;
+}
+.oculus-img{
+    width: 25rem;
+}
+.playstation-img-console{
+    background: url(./playstation\ gameplay\ buy-console\ section.jpg);
+    background-size: cover;
+}
+.nitendo-img-console{
+    background: url(./nitendo\ gameplay\ buy-console\ section.avif);
+    background-size: cover;
+}
+.oculus-img-console{
+    background: url(./oculus\ gameplay\ buy-console\ section.jpg);
+    background-size: cover;
+}
+
+/* Media query for buy-console section */
+@media (width < 1456px) {
+    .console-item{
+        width: 20rem;
+        height: 25rem;
+    }
+    .console-item-txt h1{
+        font-size: 20px;
+    }
+    .playstation-img{
+        width: 20rem;
+    }
+    .nitendo-img{
+        width: 17rem;
+    }
+    .oculus-img{
+        width: 20rem;
+    }
+}
+@media (width < 1246px) {
+    .console-item-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .buy-console .buy-console-h1{
+        font-size: 30px;
+    }
+}
+@media (width < 827px) {
+    .console-item-container{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .buy-console .buy-console-h1{
+        font-size: 25px;
+        text-align: center;
+    }
+}
+@media (width < 382px) {
+    .console-item{
+        width: 80vw;
+        height: 65vh;
+    }
+    .console-item-txt h1{
+        font-size: 20px;
+    }
+    .playstation-img{
+        width: 85vw;
+    }
+    .nitendo-img{
+        width: 75vw;
+    }
+    .oculus-img{
+        width: 85vw;
+    }
+    .console-item-txt h1{
+        font-size: 20px;
+    }
+    .console-item-txt{
+        transform: translateY(150px);
+    }
+    .nitendo-txt{
+        transform: translateY(160px);
     }
 }
