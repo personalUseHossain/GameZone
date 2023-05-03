@@ -4,14 +4,17 @@
 
 const navIcon = document.querySelector(".fa-bars-staggered");
 const menu = document.querySelector(".ul");
+const body = document.querySelector("body");
 //EventListener and function
 navIcon.addEventListener("click", () => {
   if (isBar(navIcon)) {
     navIcon.classList.replace("fa-bars-staggered", "fa-xmark");
     menu.style.right = "0%";
+    body.classList.add("no-scroll");
   } else {
     navIcon.classList.replace("fa-xmark", "fa-bars-staggered");
     menu.style.right = "100%";
+    body.classList.remove("no-scroll");
   }
 });
 
