@@ -811,8 +811,8 @@ a{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     justify-content: space-evenly;
-    align-items: center;
-    height: 25rem;
+    align-items: self-start;
+    height: 100%;
     width: 100vw;
     color:white;
     background: #000000cf;
@@ -826,3 +826,103 @@ a{
     padding: 30px;
 }
 
+/* Footer first */
+.footer-first {
+    display: grid;
+    gap: 2rem;
+    place-items: self-start;
+    width: 19rem;
+    overflow: hidden;
+}
+
+/* Footer second */
+.li-footer a{
+    color: white;
+}
+.footer-second h1{
+    margin-bottom: 2rem;
+}
+.footer-second .li-container-footer{
+    display: grid;
+    gap: 1rem;
+}
+
+/* Footer third */
+.social-media{
+    display: grid;
+    grid-auto-flow: column;
+}
+.footer-third .social-media i{
+    font-size: 30px;
+    margin-right: 2rem;
+    transition: .5s;
+}
+.footer-third .social-media i:hover{
+    color: #008cff;
+    transform: scale(1.01);
+}
+.footer-third h1{
+    margin-bottom: 2rem;
+}
+
+/* Footer forth */
+.footer-forth{
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 1rem;
+}
+.forth-txt{
+    position: relative;
+    width: 19rem;
+    text-align: center;
+}
+.footer-forth i{
+    color: #ffffff;
+    position: absolute;
+    font-size: 21px;
+    left: 0;
+}
+.footer-forth input{
+    width: 13rem;
+    padding: 7px;
+    border-radius: 6px;
+}
+.footer-forth button{
+    background: red;
+    padding: 8px;
+}
+
+/* Media Query for footer section */
+
+@media (width < 1301px) {
+    .social-media{
+        grid-template-rows: repeat(2, 1fr);
+        row-gap: 2rem;
+        text-align: center;
+    }
+}
+@media (width < 1204px) {
+    .footer{
+        grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+        place-items: center;
+    }
+    .footer-forth{
+        width: 23rem;
+        grid-area: 2;
+    }
+}
+@media (width < 768px) {
+
+    .footer-first p{
+        width: 15rem;
+    }
+}
+@media (width < 662px) {
+    .footer{
+        grid-template: repeat(4, 1fr)/1fr;
+        gap: 4rem;
+    }
+    .footer-forth{
+        grid-area: 4;
+    }
+}
