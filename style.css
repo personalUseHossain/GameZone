@@ -412,7 +412,18 @@ a{
     color: white;
     font-family: 'Castoro Titling', cursive;
     text-align: center;
-
+    background-image: linear-gradient(to left top, #000000, #1a1014, #2b1a22, #3d2332, #4f2d44, #4f3352, #4b3b5f, #43436c, #1f476b, #004861, #004851, #0c7a71);
+    position: relative;
+    z-index: 1;
+}
+.game-section::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: -1;
 }
 .game-container{
     padding: 100px 0;
@@ -488,7 +499,7 @@ a{
 .console{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    background: url(./console\ section\ bg.webp);
+    background: url(./BG/console\ section\ bg.webp);
     background-repeat: no-repeat;
     background-size: 100%;
     object-fit: cover;
@@ -568,7 +579,7 @@ a{
     display: grid;
     place-items: center;
     gap: 5rem;
-    background: url(./buy-console-bg.jpg);
+    background: url(./BG/buy-console-bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
@@ -621,6 +632,7 @@ a{
     display: grid;
     gap: 5rem;
     transition: 1s;
+    transition-delay: .2s;
     height: 110%;
     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.9))
 }
@@ -657,15 +669,15 @@ a{
     width: 25rem;
 }
 .playstation-img-console{
-    background: url(./playstation\ gameplay\ buy-console\ section.jpg);
+    background: url(./BG/playstation\ gameplay\ buy-console\ section.jpg);
     background-size: cover;
 }
 .nitendo-img-console{
-    background: url(./nitendo\ gameplay\ buy-console\ section.avif);
+    background: url(./BG/nitendo\ gameplay\ buy-console\ section.avif);
     background-size: cover;
 }
 .oculus-img-console{
-    background: url(./oculus\ gameplay\ buy-console\ section.jpg);
+    background: url(./BG/oculus\ gameplay\ buy-console\ section.jpg);
     background-size: cover;
 }
 
@@ -734,3 +746,83 @@ a{
         transform: translateY(160px);
     }
 }
+
+/* subscribe section */
+.subscribe{
+    background: url(./BG/subscribe\ section\ bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    height: 50vh;
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: 2rem;
+    padding: 0 100px;
+    grid-template-rows: repeat(2, 1fr);
+    justify-content: center;
+}
+.subscribe::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to right, #00000088, #33333300);
+    z-index: -1;
+}
+.subscribe-txt{
+    align-self: self-end;
+}
+.subscribe-txt h1{
+    font-size: 40px;
+}
+.subscribe-input{
+    position: relative;
+    height: 7rem;
+    text-align: center;
+}
+.subscribe-input input{
+    width: 17rem;
+    height: 2.5rem;
+    padding: 11px;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+.subscribe-input small{
+    position: absolute;
+    bottom: 1.9rem;
+    left: 10px;
+    color: red;
+    display: none;
+}
+.subscribe-input button{
+    background: red;
+    transition: .5s;
+}
+
+/* Media Query for subscribe-section */
+
+
+
+
+/* Footer section */
+.footer{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-evenly;
+    align-items: center;
+    height: 25rem;
+    width: 100vw;
+    color:white;
+    background: #000000cf;
+}
+.footer-first,
+.footer-second,
+.footer-third,
+.footer-forth{
+    display: grid;
+    place-items: center;
+    padding: 30px;
+}
+
