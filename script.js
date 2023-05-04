@@ -46,3 +46,35 @@ window.addEventListener("scroll", function () {
 
   prevScrollpos = currentScrollPos;
 });
+
+//Email check
+
+//variable
+const subscribeInput = document.getElementById("subscribe-input");
+const subscribeSmall = document.getElementById("subscribe-small");
+const subscribeButton = document.getElementById("subscribe-button");
+
+subscribeButton.addEventListener("click", () => {
+  if (!validateEmail(subscribeInput.value)) {
+    subscribeSmall.style.display = "block";
+    subscribeSmall.innerHTML = "Email is not valid";
+  } else {
+    subscribeSmall.style.display = "none";
+  }
+});
+
+//Checking Email validation
+
+const validateEmail = (email) => {
+  if (
+    String(email)
+      .toLowerCase()
+      .match(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      )
+  ) {
+    return true;
+  } else {
+    return false;
+  }
+};
