@@ -78,3 +78,30 @@ const validateEmail = (email) => {
     return false;
   }
 };
+
+//game section function to open new html file
+const game = document.querySelectorAll(".game");
+
+game.forEach((game) => {
+  game.addEventListener("click", () => {
+    const url = "../HTML/insidegame.html";
+    const imgurl = game.querySelector("img").src;
+    const gamename = game.querySelector("p").innerHTML;
+    const favicon = game.querySelector("img").src;
+    console.log(favicon);
+    const pagename = `${gamename} || Enjoy all game in one place`;
+    console.timeLog(imgurl);
+
+    fetch(url)
+      .then((res) => res.text())
+      .then((html) => {
+        let outputHTML = html.replace("{{%gamename%}}", gamename);
+        outputHTML = outputHTML.replace("{{%imgsrc%}}", imgurl);
+        outputHTML = outputHTML.replace("{{%pageName%}}", pagename);
+        outputHTML = outputHTML.replace("{{%favicon%}}", favicon);
+
+        const newWindow = window.open("", "-blank");
+        newWindow.document.write(outputHTML);
+      });
+  });
+});
