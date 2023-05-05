@@ -1,0 +1,30 @@
+body{
+    background: linear-gradient(to left top, #000000, #1a1014, #2b1a22, #3d2332, #4f2d44, #4f3352, #4b3b5f, #43436c, #1f476b, #004861, #004851, #0c7a71);
+    background-repeat: no-repeat;
+    color: white;
+    display: grid;
+    place-items: center;
+}
+.game{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+.game-top{
+    text-align: center;
+}
+.game-img{
+    width: 15rem;
+}
+.game-txt{
+    text-align: center;
+    font-size: 70px;
+}
+.game button{
+    padding: 8px;
+    background: white;
+}
+.game button a{
+    text-decoration: none;
+    color: black;
+}
