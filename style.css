@@ -758,9 +758,9 @@ a{
     z-index: 1;
     display: grid;
     gap: 2rem;
-    padding: 0 100px;
     grid-template-rows: repeat(2, 1fr);
     justify-content: center;
+    padding: 0 30px ;
 }
 .subscribe::after{
     content: '';
@@ -791,14 +791,26 @@ a{
 }
 .subscribe-input small{
     position: absolute;
-    bottom: 1.9rem;
-    left: 10px;
+    bottom: 1.5rem;
+    left: 10rem;
     color: red;
     display: none;
 }
 .subscribe-input button{
     background: red;
     transition: .5s;
+}
+
+@media (width < 805px) {
+    .subscribe{
+        text-align: center;
+    }
+    .subscribe-txt h1{
+        font-size: 30px;
+    }
+    .subscribe-input button{
+        margin-top: 1rem;
+    }
 }
 
 /* Media Query for subscribe-section */
@@ -830,9 +842,12 @@ a{
 .footer-first {
     display: grid;
     gap: 2rem;
-    place-items: self-start;
+    place-items: center;
     width: 19rem;
-    overflow: hidden;
+}
+.logo-footer a{
+    color: white;
+    font-family: 'Bruno Ace SC', cursive;
 }
 
 /* Footer second */
@@ -870,6 +885,7 @@ a{
     display: flex;
     flex-wrap: wrap;
     row-gap: 1rem;
+    justify-content: center;
 }
 .forth-txt{
     position: relative;
@@ -924,5 +940,14 @@ a{
     }
     .footer-forth{
         grid-area: 4;
+    }
+    .footer-first p{
+        text-align: center;
+    }
+}
+
+@media (width < 360px) {
+    .footer-forth input{
+        width: 10rem;
     }
 }
