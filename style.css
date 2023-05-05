@@ -22,6 +22,7 @@ body{
     font-family: 'Roboto', sans-serif;
     overflow-x: hidden;
     background: rgba(0, 0, 0, 0.677);
+    scroll-behavior: smooth;
 }
 .no-scroll{
     overflow: hidden;
