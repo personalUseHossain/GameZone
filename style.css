@@ -23,7 +23,23 @@ body{
     overflow-x: hidden;
     background: rgba(0, 0, 0, 0.677);
     scroll-behavior: smooth;
+    display: none;
 }
+.loading{
+    width: 100vw;
+    z-index: 10000;
+    inset: 0;
+    position: fixed;
+    background-color: black;
+    display: grid;
+    place-items: center;
+    transition: 2s;
+}
+
+.loadingImg{
+    width: 20vw;
+}
+
 .no-scroll{
     overflow: hidden;
 }
