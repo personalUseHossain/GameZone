@@ -1,3 +1,10 @@
+//Loading animation funciton
+window.addEventListener("load", () => {
+  const loadingImg = document.querySelector(".loading");
+  loadingImg.style.transform = "translateX(100%)";
+  loadingImg.style.opacity = "0";
+});
+
 //Hamburger function
 
 //variables
@@ -103,5 +110,14 @@ game.forEach((game) => {
         const newWindow = window.open("", "-blank");
         newWindow.document.write(outputHTML);
       });
+  });
+});
+
+//Making the website load after all images load completed
+
+const allIMG = document.querySelectorAll("img");
+allIMG.forEach((img) => {
+  img.addEventListener("load", () => {
+    document.querySelector("body").style.display = "block";
   });
 });
