@@ -112,12 +112,3 @@ game.forEach((game) => {
       });
   });
 });
-
-//Making the website load after all images load completed
-
-const allIMG = document.querySelectorAll("img");
-allIMG.forEach((img) => {
-  img.addEventListener("load", () => {
-    document.querySelector("body").style.display = "block";
-  });
-});
