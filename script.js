@@ -1,9 +1,9 @@
 //Loading animation funciton
-window.addEventListener("load", () => {
-  const loadingImg = document.querySelector(".loading");
-  loadingImg.style.transform = "translateX(100%)";
-  loadingImg.style.opacity = "0";
-});
+// window.addEventListener("load", () => {
+//   const loadingImg = document.querySelector(".loading");
+//   loadingImg.style.transform = "translateX(100%)";
+//   loadingImg.style.opacity = "0";
+// });
 
 //Hamburger function
 

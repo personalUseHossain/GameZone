@@ -30,7 +30,7 @@ body{
     inset: 0;
     position: fixed;
     background-color: black;
-    display: grid;
+    display: none;
     place-items: center;
     transition: 2s;
 }
