@@ -23,7 +23,6 @@ body{
     overflow-x: hidden;
     background: rgba(0, 0, 0, 0.677);
     scroll-behavior: smooth;
-    display: none;
 }
 .loading{
     width: 100vw;
